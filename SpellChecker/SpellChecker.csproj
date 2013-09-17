@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44808E50-6245-4A38-9F45-88E9C93980AE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications.0.5.16\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\packages\Machine.Specifications.0.5.16\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.0.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.0.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Services.5.0.0\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.0.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHunspell">
+      <HintPath>..\packages\NHunspell.1.1.1\lib\net\NHunspell.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.0.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="basic\html-pspell.html" />
+    <Content Include="basic\multiple-fields.html" />
+    <Content Include="basic\standalone.html" />
+    <Content Include="basic\text-enchant.html" />
+    <Content Include="basic\text-google.html" />
+    <Content Include="basic\text-pspell.html" />
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap-responsive.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\demos.css" />
+    <Content Include="css\jquery.spellchecker.css" />
+    <Content Include="css\jquery.spellchecker.min.css" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="js\app.js" />
+    <Content Include="js\jquery.spellchecker.js" />
+    <Content Include="js\jquery.spellchecker.min.js" />
+    <Content Include="js\lib\bootstrap-wysihtml5\css\bootstrap-wysihtml5.css" />
+    <Content Include="js\lib\bootstrap-wysihtml5\js\bootstrap-wysihtml5.css" />
+    <Content Include="js\lib\bootstrap-wysihtml5\js\bootstrap-wysihtml5.js" />
+    <Content Include="js\lib\bootstrap-wysihtml5\js\wysihtml5-0.3.0.js" />
+    <Content Include="js\lib\bootstrap\bootstrap.js" />
+    <Content Include="js\lib\bootstrap\bootstrap.min.js" />
+    <Content Include="js\lib\ckeditor\build-config.js" />
+    <Content Include="js\lib\ckeditor\ckeditor.js" />
+    <Content Include="js\lib\ckeditor\config.js" />
+    <Content Include="js\lib\ckeditor\contents.css" />
+    <Content Include="js\lib\ckeditor\lang\af.js" />
+    <Content Include="js\lib\ckeditor\lang\ar.js" />
+    <Content Include="js\lib\ckeditor\lang\bg.js" />
+    <Content Include="js\lib\ckeditor\lang\bn.js" />
+    <Content Include="js\lib\ckeditor\lang\bs.js" />
+    <Content Include="js\lib\ckeditor\lang\ca.js" />
+    <Content Include="js\lib\ckeditor\lang\cs.js" />
+    <Content Include="js\lib\ckeditor\lang\cy.js" />
+    <Content Include="js\lib\ckeditor\lang\da.js" />
+    <Content Include="js\lib\ckeditor\lang\de.js" />
+    <Content Include="js\lib\ckeditor\lang\el.js" />
+    <Content Include="js\lib\ckeditor\lang\en-au.js" />
+    <Content Include="js\lib\ckeditor\lang\en-ca.js" />
+    <Content Include="js\lib\ckeditor\lang\en-gb.js" />
+    <Content Include="js\lib\ckeditor\lang\en.js" />
+    <Content Include="js\lib\ckeditor\lang\eo.js" />
+    <Content Include="js\lib\ckeditor\lang\es.js" />
+    <Content Include="js\lib\ckeditor\lang\et.js" />
+    <Content Include="js\lib\ckeditor\lang\eu.js" />
+    <Content Include="js\lib\ckeditor\lang\fa.js" />
+    <Content Include="js\lib\ckeditor\lang\fi.js" />
+    <Content Include="js\lib\ckeditor\lang\fo.js" />
+    <Content Include="js\lib\ckeditor\lang\fr-ca.js" />
+    <Content Include="js\lib\ckeditor\lang\fr.js" />
+    <Content Include="js\lib\ckeditor\lang\gl.js" />
+    <Content Include="js\lib\ckeditor\lang\gu.js" />
+    <Content Include="js\lib\ckeditor\lang\he.js" />
+    <Content Include="js\lib\ckeditor\lang\hi.js" />
+    <Content Include="js\lib\ckeditor\lang\hr.js" />
+    <Content Include="js\lib\ckeditor\lang\hu.js" />
+    <Content Include="js\lib\ckeditor\lang\is.js" />
+    <Content Include="js\lib\ckeditor\lang\it.js" />
+    <Content Include="js\lib\ckeditor\lang\ja.js" />
+    <Content Include="js\lib\ckeditor\lang\ka.js" />
+    <Content Include="js\lib\ckeditor\lang\km.js" />
+    <Content Include="js\lib\ckeditor\lang\ko.js" />
+    <Content Include="js\lib\ckeditor\lang\ku.js" />
+    <Content Include="js\lib\ckeditor\lang\lt.js" />
+    <Content Include="js\lib\ckeditor\lang\lv.js" />
+    <Content Include="js\lib\ckeditor\lang\mk.js" />
+    <Content Include="js\lib\ckeditor\lang\mn.js" />
+    <Content Include="js\lib\ckeditor\lang\ms.js" />
+    <Content Include="js\lib\ckeditor\lang\nb.js" />
+    <Content Include="js\lib\ckeditor\lang\nl.js" />
+    <Content Include="js\lib\ckeditor\lang\no.js" />
+    <Content Include="js\lib\ckeditor\lang\pl.js" />
+    <Content Include="js\lib\ckeditor\lang\pt-br.js" />
+    <Content Include="js\lib\ckeditor\lang\pt.js" />
+    <Content Include="js\lib\ckeditor\lang\ro.js" />
+    <Content Include="js\lib\ckeditor\lang\ru.js" />
+    <Content Include="js\lib\ckeditor\lang\sk.js" />
+    <Content Include="js\lib\ckeditor\lang\sl.js" />
+    <Content Include="js\lib\ckeditor\lang\sr-latn.js" />
+    <Content Include="js\lib\ckeditor\lang\sr.js" />
+    <Content Include="js\lib\ckeditor\lang\sv.js" />
+    <Content Include="js\lib\ckeditor\lang\th.js" />
+    <Content Include="js\lib\ckeditor\lang\tr.js" />
+    <Content Include="js\lib\ckeditor\lang\ug.js" />
+    <Content Include="js\lib\ckeditor\lang\uk.js" />
+    <Content Include="js\lib\ckeditor\lang\vi.js" />
+    <Content Include="js\lib\ckeditor\lang\zh-cn.js" />
+    <Content Include="js\lib\ckeditor\lang\zh.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="js\lib\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="js\lib\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="js\lib\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="js\lib\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="js\lib\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="js\lib\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="js\lib\ckeditor\plugins\icons.png" />
+    <Content Include="js\lib\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="js\lib\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="js\lib\ckeditor\plugins\jqueryspellchecker\plugin.js" />
+    <Content Include="js\lib\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="js\lib\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="js\lib\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="js\lib\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="js\lib\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="js\lib\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="js\lib\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="js\lib\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="js\lib\ckeditor\samples\ajax.html" />
+    <Content Include="js\lib\ckeditor\samples\api.html" />
+    <Content Include="js\lib\ckeditor\samples\appendto.html" />
+    <Content Include="js\lib\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="js\lib\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="js\lib\ckeditor\samples\assets\sample.css" />
+    <Content Include="js\lib\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="js\lib\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="js\lib\ckeditor\samples\divreplace.html" />
+    <Content Include="js\lib\ckeditor\samples\index.html" />
+    <Content Include="js\lib\ckeditor\samples\inlineall.html" />
+    <Content Include="js\lib\ckeditor\samples\inlinebycode.html" />
+    <Content Include="js\lib\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="js\lib\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="js\lib\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="js\lib\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="js\lib\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="js\lib\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="js\lib\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="js\lib\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="js\lib\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="js\lib\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="js\lib\ckeditor\samples\readonly.html" />
+    <Content Include="js\lib\ckeditor\samples\replacebyclass.html" />
+    <Content Include="js\lib\ckeditor\samples\replacebycode.html" />
+    <Content Include="js\lib\ckeditor\samples\sample.css" />
+    <Content Include="js\lib\ckeditor\samples\sample.js" />
+    <Content Include="js\lib\ckeditor\samples\tabindex.html" />
+    <Content Include="js\lib\ckeditor\samples\uicolor.html" />
+    <Content Include="js\lib\ckeditor\samples\uilanguages.html" />
+    <Content Include="js\lib\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="js\lib\ckeditor\skins\moono\dialog.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\editor.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="js\lib\ckeditor\skins\moono\icons.png" />
+    <Content Include="js\lib\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="js\lib\ckeditor\skins\moono\images\close.png" />
+    <Content Include="js\lib\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="js\lib\ckeditor\styles.js" />
+    <Content Include="js\lib\jhtmlarea\AutoPostTest.aspx" />
+    <Content Include="js\lib\jhtmlarea\AutoPostTest.aspx.vb" />
+    <Content Include="js\lib\jhtmlarea\ColorPickerMenu.htm" />
+    <Content Include="js\lib\jhtmlarea\Default.htm" />
+    <Content Include="js\lib\jhtmlarea\images\disk.png" />
+    <Content Include="js\lib\jhtmlarea\Readme.txt" />
+    <None Include="js\lib\jhtmlarea\scripts\jHtmlArea-0.7.5-vsdoc.js" />
+    <Content Include="js\lib\jhtmlarea\scripts\jHtmlArea-0.7.5.js" />
+    <None Include="js\lib\jhtmlarea\scripts\jHtmlArea-0.7.5.min-vsdoc.js" />
+    <Content Include="js\lib\jhtmlarea\scripts\jHtmlArea-0.7.5.min.js" />
+    <Content Include="js\lib\jhtmlarea\scripts\jHtmlArea.ColorPickerMenu-0.7.0.js" />
+    <Content Include="js\lib\jhtmlarea\scripts\jHtmlArea.ColorPickerMenu-0.7.0.min.js" />
+    <None Include="js\lib\jhtmlarea\scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="js\lib\jhtmlarea\scripts\jquery-1.3.2.js" />
+    <None Include="js\lib\jhtmlarea\scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="js\lib\jhtmlarea\scripts\jquery-1.3.2.min.js" />
+    <Content Include="js\lib\jhtmlarea\scripts\jquery-ui-1.7.2.custom.min.js" />
+    <Content Include="js\lib\jhtmlarea\style\jHtmlArea.ColorPickerMenu.css" />
+    <Content Include="js\lib\jhtmlarea\style\jHtmlArea.css" />
+    <Content Include="js\lib\jhtmlarea\style\jHtmlArea.Editor.css" />
+    <Content Include="js\lib\jhtmlarea\style\jHtmlArea.png" />
+    <Content Include="js\lib\jhtmlarea\style\jHtmlArea_Toolbar_Group_BG.png" />
+    <Content Include="js\lib\jhtmlarea\style\jHtmlArea_Toolbar_Group__Btn_Select_BG.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\lib\jhtmlarea\style\jqueryui\ui-lightness\jquery-ui-1.7.2.custom.css" />
+    <Content Include="js\lib\jhtmlarea\Test.htm" />
+    <Content Include="js\lib\jquery\jquery-1.8.2.min.js" />
+    <Content Include="js\lib\markitup\jquery.markitup.js" />
+    <Content Include="js\lib\markitup\sets\default\images\bold.png" />
+    <Content Include="js\lib\markitup\sets\default\images\clean.png" />
+    <Content Include="js\lib\markitup\sets\default\images\image.png" />
+    <Content Include="js\lib\markitup\sets\default\images\italic.png" />
+    <Content Include="js\lib\markitup\sets\default\images\link.png" />
+    <Content Include="js\lib\markitup\sets\default\images\list-bullet.png" />
+    <Content Include="js\lib\markitup\sets\default\images\list-numeric.png" />
+    <Content Include="js\lib\markitup\sets\default\images\picture.png" />
+    <Content Include="js\lib\markitup\sets\default\images\preview.png" />
+    <Content Include="js\lib\markitup\sets\default\images\stroke.png" />
+    <Content Include="js\lib\markitup\sets\default\set.js" />
+    <Content Include="js\lib\markitup\sets\default\style.css" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-container.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-bbcode.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-dotclear.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-html.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-json.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-markdown.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-textile.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-wiki.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor-xml.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\bg-editor.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\handle.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\menu.png" />
+    <Content Include="js\lib\markitup\skins\markitup\images\submenu.png" />
+    <Content Include="js\lib\markitup\skins\markitup\style.css" />
+    <Content Include="js\lib\markitup\skins\simple\images\handle.png" />
+    <Content Include="js\lib\markitup\skins\simple\images\menu.png" />
+    <Content Include="js\lib\markitup\skins\simple\images\submenu.png" />
+    <Content Include="js\lib\markitup\skins\simple\style.css" />
+    <Content Include="js\lib\markitup\templates\preview.css" />
+    <Content Include="js\lib\markitup\templates\preview.html" />
+    <Content Include="js\lib\prettyprint\prettyprint.js" />
+    <Content Include="js\lib\redactor\css\style.css" />
+    <Content Include="js\lib\redactor\redactor.css" />
+    <Content Include="js\lib\redactor\redactor.js" />
+    <Content Include="js\lib\redactor\redactor.min.js" />
+    <Content Include="js\lib\tinymce\jquery.tinymce.js" />
+    <Content Include="js\lib\tinymce\langs\en.js" />
+    <Content Include="js\lib\tinymce\license.txt" />
+    <Content Include="js\lib\tinymce\plugins\advhr\css\advhr.css" />
+    <Content Include="js\lib\tinymce\plugins\advhr\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\advhr\js\rule.js" />
+    <Content Include="js\lib\tinymce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\advhr\rule.htm" />
+    <Content Include="js\lib\tinymce\plugins\advimage\css\advimage.css" />
+    <Content Include="js\lib\tinymce\plugins\advimage\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\advimage\image.htm" />
+    <Content Include="js\lib\tinymce\plugins\advimage\img\sample.gif" />
+    <Content Include="js\lib\tinymce\plugins\advimage\js\image.js" />
+    <Content Include="js\lib\tinymce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\advlink\css\advlink.css" />
+    <Content Include="js\lib\tinymce\plugins\advlink\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\advlink\js\advlink.js" />
+    <Content Include="js\lib\tinymce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\advlink\link.htm" />
+    <Content Include="js\lib\tinymce\plugins\advlist\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\autolink\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\autosave\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\autosave\langs\en.js" />
+    <Content Include="js\lib\tinymce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\directionality\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\emotions\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\emotions\emotions.htm" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="js\lib\tinymce\plugins\emotions\js\emotions.js" />
+    <Content Include="js\lib\tinymce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\example\dialog.htm" />
+    <Content Include="js\lib\tinymce\plugins\example\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\example\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\example\img\example.gif" />
+    <Content Include="js\lib\tinymce\plugins\example\js\dialog.js" />
+    <Content Include="js\lib\tinymce\plugins\example\langs\en.js" />
+    <Content Include="js\lib\tinymce\plugins\example\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="js\lib\tinymce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\fullpage\fullpage.htm" />
+    <Content Include="js\lib\tinymce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="js\lib\tinymce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="js\lib\tinymce\plugins\iespell\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="js\lib\tinymce\plugins\inlinepopups\template.htm" />
+    <Content Include="js\lib\tinymce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\jqueryspellchecker\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\layer\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\lists\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\media\css\media.css" />
+    <Content Include="js\lib\tinymce\plugins\media\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\media\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\media\js\embed.js" />
+    <Content Include="js\lib\tinymce\plugins\media\js\media.js" />
+    <Content Include="js\lib\tinymce\plugins\media\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\media\media.htm" />
+    <Content Include="js\lib\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="js\lib\tinymce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\paste\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\paste\js\pastetext.js" />
+    <Content Include="js\lib\tinymce\plugins\paste\js\pasteword.js" />
+    <Content Include="js\lib\tinymce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\paste\pastetext.htm" />
+    <Content Include="js\lib\tinymce\plugins\paste\pasteword.htm" />
+    <Content Include="js\lib\tinymce\plugins\preview\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\preview\example.html" />
+    <Content Include="js\lib\tinymce\plugins\preview\jscripts\embed.js" />
+    <Content Include="js\lib\tinymce\plugins\preview\preview.html" />
+    <Content Include="js\lib\tinymce\plugins\print\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\print\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\save\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\save\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="js\lib\tinymce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="js\lib\tinymce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\changelog.txt" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\css\content.css" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="js\lib\tinymce\plugins\style\css\props.css" />
+    <Content Include="js\lib\tinymce\plugins\style\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\style\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\style\js\props.js" />
+    <Content Include="js\lib\tinymce\plugins\style\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\style\props.htm" />
+    <Content Include="js\lib\tinymce\plugins\style\readme.txt" />
+    <Content Include="js\lib\tinymce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\table\cell.htm" />
+    <Content Include="js\lib\tinymce\plugins\table\css\cell.css" />
+    <Content Include="js\lib\tinymce\plugins\table\css\row.css" />
+    <Content Include="js\lib\tinymce\plugins\table\css\table.css" />
+    <Content Include="js\lib\tinymce\plugins\table\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\table\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\table\js\cell.js" />
+    <Content Include="js\lib\tinymce\plugins\table\js\merge_cells.js" />
+    <Content Include="js\lib\tinymce\plugins\table\js\row.js" />
+    <Content Include="js\lib\tinymce\plugins\table\js\table.js" />
+    <Content Include="js\lib\tinymce\plugins\table\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\table\merge_cells.htm" />
+    <Content Include="js\lib\tinymce\plugins\table\row.htm" />
+    <Content Include="js\lib\tinymce\plugins\table\table.htm" />
+    <Content Include="js\lib\tinymce\plugins\template\blank.htm" />
+    <Content Include="js\lib\tinymce\plugins\template\css\template.css" />
+    <Content Include="js\lib\tinymce\plugins\template\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\template\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\template\js\template.js" />
+    <Content Include="js\lib\tinymce\plugins\template\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\plugins\template\template.htm" />
+    <Content Include="js\lib\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="js\lib\tinymce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="js\lib\tinymce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\about.htm" />
+    <Content Include="js\lib\tinymce\themes\advanced\anchor.htm" />
+    <Content Include="js\lib\tinymce\themes\advanced\charmap.htm" />
+    <Content Include="js\lib\tinymce\themes\advanced\color_picker.htm" />
+    <Content Include="js\lib\tinymce\themes\advanced\editor_template.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\editor_template_src.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\image.htm" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\flash.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\icons.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\iframe.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\quicktime.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\realmedia.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\shockwave.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\trans.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\video.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\js\about.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\js\anchor.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\js\charmap.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\js\color_picker.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\js\image.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\js\link.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\js\source_editor.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\langs\en.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="js\lib\tinymce\themes\advanced\link.htm" />
+    <Content Include="js\lib\tinymce\themes\advanced\shortcuts.htm" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\content.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\default\ui.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="js\lib\tinymce\themes\advanced\source_editor.htm" />
+    <Content Include="js\lib\tinymce\themes\simple\editor_template.js" />
+    <Content Include="js\lib\tinymce\themes\simple\editor_template_src.js" />
+    <Content Include="js\lib\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="js\lib\tinymce\themes\simple\langs\en.js" />
+    <Content Include="js\lib\tinymce\themes\simple\skins\default\content.css" />
+    <Content Include="js\lib\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="js\lib\tinymce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="js\lib\tinymce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="js\lib\tinymce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="js\lib\tinymce\tiny_mce.js" />
+    <Content Include="js\lib\tinymce\tiny_mce_popup.js" />
+    <Content Include="js\lib\tinymce\tiny_mce_src.js" />
+    <Content Include="js\lib\tinymce\utils\editable_selects.js" />
+    <Content Include="js\lib\tinymce\utils\form_utils.js" />
+    <Content Include="js\lib\tinymce\utils\mctabs.js" />
+    <Content Include="js\lib\tinymce\utils\validate.js" />
+    <Content Include="index.html" />
+    <Content Include="Web.config" />
+    <Content Include="SpellChecker.aspx" />
+    <Content Include="webservices\php\SpellChecker.php" />
+    <Content Include="webservices\php\SpellChecker\Driver.php" />
+    <Content Include="webservices\php\SpellChecker\Driver\Enchant.php" />
+    <Content Include="webservices\php\SpellChecker\Driver\Google.php" />
+    <Content Include="webservices\php\SpellChecker\Driver\Pspell.php" />
+    <Content Include="webservices\php\SpellChecker\Request.php" />
+    <Content Include="webservices\php\SplClassLoader.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpellChecker.aspx.cs">
+      <DependentUpon>SpellChecker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpellChecker.aspx.designer.cs">
+      <DependentUpon>SpellChecker.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="js\lib\ckeditor\CHANGES.md" />
+    <Content Include="js\lib\ckeditor\LICENSE.md" />
+    <Content Include="js\lib\ckeditor\README.md" />
+    <Content Include="js\lib\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="js\lib\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="js\lib\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="js\lib\ckeditor\skins\moono\readme.md" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\classes\EnchantSpell.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\classes\GoogleSpell.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\classes\PSpell.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\classes\PSpellShell.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\classes\SpellChecker.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\classes\utils\JSON.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\classes\utils\Logger.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\config.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\includes\general.php" />
+    <Content Include="js\lib\tinymce\plugins\spellchecker\rpc.php" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60261/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y "$(SolutionDir)packages\NHunspell.1.1.1\native\*.*" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

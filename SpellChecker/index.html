@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Spellchecker - TinyMCE demo</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery.spellchecker.css" rel="stylesheet" />
+    <link href="css/demos.css" rel="stylesheet" />
+
+    <style type="text/css">
+    .mce_jqueryspellchecker .mceIcon {
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHtSURBVDjLY/j//z8DJZiBKgY49drM9J3idhLEtu+xjvea4nLNqsVspnWr2S6QmF6+Zol2ltpq5QSlmcpxijMxDABp9pjkuMuu28rIpsMi3rLZFKzIus38mm6OuqRxpf41nC5w7rOJd+i1ngnUXGLTbj7Tsskk3rbL8ppZreEu7Ry1mWpJSvHK8Uoz0TWK5U/nYIg8y8rgPsl+l12P1WqgbTPdJtk/AtoWb1CkBdagnqyyWilawVM/Rw/FBQyx540ZGm/eYIg8P43BdYLdSZiEcYXeTJB/TaoNroH8q5OldVIhXE5SKUqhXSNRfZdKvPKVkOrED+L9d/8wN998w+B4XIL40I48K8FQf/O6+7In/7mbb35hsD2qjBKNDLU3ExjKb7pi1Rx61ke89+6fwBVP/jPXXn/HYHlYGiMdMJTe1JJc/PgHQ/X1xQyplznBYuFnmRiiz062nPfof8DSJ/8ZSq8/ZzA9KIEzIQE1Vvuuf/6fufv2M4bgsz4MxVdPui8Cal4C1Jx/+RGDPqpmTANiz7MAvXI+bO2L/5ZzHvzP2Pjif8DCx/8ZMi/fY9DcL0FUUmbwPKkg3Hr7T+WOV//95j/8z5B6/jaD6l4JkvIC0J9FTtPu/2dIPn+PQXG3BFmZiUFzbweDLH7NVMmNAOGld33BRiNUAAAAAElFTkSuQmCC) no-repeat center center !important;
+    }
+    </style>
+
+   
+  <body>
+
+    <div class="container">
+
+      <div class="hero-unit">
+          <h1>C# Backed - Spellchecker - With NHunSpell</h1>
+      
+      </div>
+       <div class="hero-unit">
+            <h2>jQuery Spellchecker - TinyMCE </h2>
+      
+      </div>
+        
+        <div class="row-fluid">
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="demo">
+              <textarea class="textarea" style="width:90%" rows="10">
+              &lt;p&gt;
+                But I must explain to you how all this mistaken idea of <strong style="font-style:italic;">deno<em>un</em>ncing</strong> pleasure and <strong>praising</strong> pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master builder of human happiness. Noo, one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequencse's that are extremely painful.
+              &lt;/p&gt;            
+              &lt;p&gt;
+                Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying caonsequences, or one who avoids a pain that produces no resultant pleasure?
+              &lt;/p&gt;</textarea>
+            </div>
+          </div>
+      </div>
+
+      <footer>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <script src="js/lib/jquery/jquery-1.8.2.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/lib/prettyprint/prettyprint.js"></script>
+    <script src="js/jquery.spellchecker.js"></script>
+
+    <!-- Load TinyMCE -->
+    <script type="text/javascript" src="js/lib/tinymce/jquery.tinymce.js"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        $('.textarea').tinymce({
+          // Location of TinyMCE script
+          script_url : 'js/lib/tinymce/tiny_mce.js',
+
+          // General options
+          theme : "advanced",
+          skin : "o2k7",
+          skin_variant : "silver",
+          plugins : "jqueryspellchecker",
+
+          // Theme options
+          theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,formatselect,jqueryspellchecker",
+          theme_advanced_buttons2 : "",
+          theme_advanced_buttons3 : "",
+          theme_advanced_toolbar_location : "top",
+          theme_advanced_toolbar_align : "left",
+          theme_advanced_statusbar_location : "bottom",
+          theme_advanced_resizing : true,
+
+          // Example content CSS (should be your site CSS)
+          content_css : "css/jquery.spellchecker.css"
+        });
+      });
+    </script>
+  </body>
+</html>
