@@ -29,7 +29,7 @@ namespace SpellChecker
         }
         public string get_suggestions(string word)
         {
-            List<string> suggestions = Suggest(word);
+            var suggestions = Suggest(word);
             return JsonConvert.SerializeObject(suggestions);
         }
 
